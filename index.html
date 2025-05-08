@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Facts Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; max-width: 600px; }
+        input, button { padding: 0.5em; margin-top: 1em; width: 100%; }
+        .fact-box { margin-top: 2em; padding: 1em; background: #f9f9f9; border-left: 5px solid #4CAF50; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Random Facts Generator</h1>
+    <form method="post">
+        <label>What topic are you curious about?</label>
+        <input type="text" name="topic" placeholder="e.g., space, history, science" required>
+        <button type="submit">Generate Fact</button>
+    </form>
+
+    {% if fact %}
+    <div class="fact-box">
+        <strong>Fun Fact:</strong> {{ fact }}
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
